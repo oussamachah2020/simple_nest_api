@@ -12,11 +12,10 @@ import cors from 'cors';
 import { ConfigModule } from '@nestjs/config';
 import { AuthMiddleware } from '../middleware/auth.middleware';
 import { PostsModule } from '../posts/posts.module';
-import { UsersController } from '../users/users.controller';
 import { PostsController } from '../posts/posts.controller';
 
 @Module({
-  imports: [UsersModule, PostsModule, ConfigModule.forRoot({ isGlobal: true })],
+  imports: [UsersModule, PostsModule, ConfigModule.forRoot()],
   controllers: [AppController],
   providers: [AppService],
 })
